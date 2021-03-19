@@ -306,6 +306,8 @@ Now test your Nginx config with `service nginx configtest` and reload the config
 Then, you need to make sure that BTCPayServer does not try to handle HTTPS on its side, you can do this by disabling it on your BTCPayServer instance.
 
 ```bash
+export REVERSEPROXY_HTTP_PORT="10080"
+export REVERSEPROXY_HTTPS_PORT="10443"
 BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;nginx-https"
 . btcpay-setup.sh -i
 ```
